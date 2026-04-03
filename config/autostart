@@ -1,0 +1,10 @@
+sudo systemctl enable- avahi-daemon &
+tint2 &
+compton &
+rofi -show run -m -1 &
+nitrogen --restore &
+autocutsel &
+vncconfig &
+vncconfig -nowin &
+#vncserver -localhost no :1 &
+
