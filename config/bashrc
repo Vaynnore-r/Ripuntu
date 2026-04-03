@@ -115,4 +115,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+## welcome 
+echo
+echo "Ripuntu Fast and Reliable"
+## add aliases below
 alias ssn='sudo systemctl enable --now ssh'
