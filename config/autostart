@@ -1,4 +1,4 @@
-## autostar
+## autostart
 sudo systemctl enable- avahi-daemon &
 tint2 &
 compton &
