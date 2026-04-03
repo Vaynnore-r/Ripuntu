@@ -258,7 +258,7 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <!-- Super + Spacja: Otwiera wyszukiwark? Rofi -->
+    <!-- Super + Space: opens rofi -->
     <keybind key="W-space">
       <action name="Execute">
         <command>rofi -show run -m -1</command>
