@@ -5,7 +5,7 @@
 echo
 echo "Install will start soon please be shure that you are on sudo user other than root"
 echo
-sleep 1
+sleep 0.5
 echo
 echo "You will be asked for password and consent to install programs"
 echo
