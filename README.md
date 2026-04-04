@@ -1,6 +1,4 @@
-# Ripuntu
-
-#### **New and Fast Ubuntu Flavor**
+# Ripuntu - **New and Fast Ubuntu Flavor**
 
 **CHECK YOUR RELEASE AND TAG TO PREVENT INSTALLING OUTDATED VERSION**
 
