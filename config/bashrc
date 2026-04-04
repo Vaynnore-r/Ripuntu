@@ -116,8 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## welcome 
+## TTY welcome message
 echo
 echo "Ripuntu Fast and Reliable"
-## add aliases below
+echo
+## Add aliases below.
 alias ssn='sudo systemctl enable --now ssh'
