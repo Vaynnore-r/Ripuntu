@@ -1,0 +1,67 @@
+## Starship config red theme. WARNING: May not work.
+format = """
+[](fg:red)\
+$os\
+$username\
+[](bg:red fg:red)\
+$directory\
+[](fg:red bg:red)\
+$git_branch\
+$git_status\
+[](fg:red)\
+$character
+"""
+
+# Nowa linia po wykonaniu komendy
+add_newline = true
+
+[os]
+disabled = false
+style = "bg:red fg:white"
+
+[username]
+show_always = true
+style_user = "bg:red fg:white"
+format = "[$user]($style)"
+
+[directory]
+style = "bg:red fg:white"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+style = "bg:red fg:white"
+format = "[[ $symbol$branch ]($style)]($style)"
+
+[git_status]
+style = "bg:red fg:white"
+format = '[[($all_status$ahead_behind )]($style)]($style)'
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[character]
+success_symbol = "[ ➜](bold red)"
+error_symbol = "[ ✗](bold red)"
+
+# Addons
+[python]
+symbol = "🐍 "
+style = "bold red"
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+
+[node_js]
+symbol = " "
+style = "bold red"
