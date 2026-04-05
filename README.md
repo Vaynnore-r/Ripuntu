@@ -2,7 +2,9 @@
 
 **CHECK YOUR RELEASE AND TAG TO PREVENT INSTALLING OUTDATED VERSION**
 
-1.4 Version requires installed Ubuntu and manual file swapping.
+1.4.5 Version requires installed Ubuntu and manual file swapping.
+Folder restructured.
+
 Added missing config file and added missing descriptions to other config files.
 
 1.3.5 Version requires installed Ubuntu and manual file swapping.
