@@ -1,0 +1,12 @@
+Chamge bashcr to .bashcr
+You can add your wallpaper via nitrogen at ~/.config/nitrogen
+Also you can customize starship at ~/.config/starship.toml
+To remove starship: 
+sudo rm /usr/local/bin/starship
+delete eval "$(starship init bash) form .bashcr
+rm -rf ~/.config/starship.toml
+To delete fronts:
+rm -rf ~/.local/share/fonts/JetBrainsMono*
+fc-cache -f -v
+
+

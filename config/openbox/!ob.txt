@@ -1,2 +1,0 @@
-You can add your wallpaper via nitrogen at ~/.config/nitrogen
-Also you can customize starship at [blank] 
