@@ -2,6 +2,9 @@
 
 **CHECK YOUR RELEASE AND TAG TO PREVENT INSTALLING OUTDATED VERSION**
 
+1.4.5.5 (Starship pt.1) Version requires installed Ubuntu and manual file swapping.
+This is pre release version due to starship testing issues.
+
 1.4.5 Version requires installed Ubuntu and manual file swapping.
 Folder restructure.
 
