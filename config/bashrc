@@ -122,3 +122,5 @@ echo "Ripuntu Fast and Reliable"
 echo
 ## Add aliases below.
 alias ssn='sudo systemctl enable --now ssh'
+## Starship autostart
+eval "$(starship init bash)"
