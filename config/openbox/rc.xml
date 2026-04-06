@@ -43,7 +43,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare-03</name>
+    <name>Artwiz-boxed</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -252,26 +252,22 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-
-     <!--Moves window -->
+    <!--Moves window -->
     <keybind key="A-space">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    
     <!-- Super + Space: opens rofi -->
     <keybind key="W-space">
       <action name="Execute">
         <command>rofi -show run -m -1</command>
       </action>
     </keybind>
-
     <!-- Closes current window -->
     <keybind key="A-Escape">
       <action name="Close"/>
     </keybind>
-
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
