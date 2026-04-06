@@ -1,6 +1,16 @@
 # Ripuntu - **New and Fast Ubuntu Flavor**
 
-**CHECK YOUR RELEASE AND TAG TO PREVENT INSTALLING OUTDATED VERSION**
+**CHECK YOUR RELEASE TO PREVENT INSTALLING OUTDATED VERSION**
+
+How to use - Just run thease commands (In Ripuntu folder):
+1. chmod +x ripuntu.sh
+2. ./ripuntu.sh
+3. Enjoy your new lightweight desktop environment.
+
+RELEASES:
+
+1.6 Version no longer requires installed manual file swapping.
+File copying added to ripuntu.sh .
 
 1.5.5 Version requires installed Ubuntu and manual file swapping.
 This version is tested and safe to use but its better to wait for newer releases.
