@@ -2,6 +2,9 @@
 
 **CHECK YOUR RELEASE AND TAG TO PREVENT INSTALLING OUTDATED VERSION**
 
+1.5.5 Version requires installed Ubuntu and manual file swapping.
+This version is tested and safe to use but its better to wait for newer releases.
+
 1.5 (Starship stable) Version requires installed Ubuntu and manual file swapping.
 Added missing config files and changed location of files. Changed readme and added starship to ripuntu.sh and overall fixes.
 
