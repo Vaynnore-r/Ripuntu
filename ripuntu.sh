@@ -2,13 +2,12 @@
 export DEBIAN_FRONTEND=noninteractive
 ## This is ripuntu installer.
 ## Do chmod +x ripuntu.sh and run ./ripuntu.sh without sudo to prevent install issues.
+clear
 echo
 echo "WARNING: This script will overwrite your current desktop environment. Please backup your data before proceeding."
 echo
 sleep 3
 echo "Install will start soon please be sure that you are on sudo user other than root"
-echo
-sleep 1
 echo
 echo "You will be asked for password and consent to install programs"
 echo
@@ -19,6 +18,7 @@ echo ""
 
 if [[ "$answer" =~ ^[Yy]$ ]]; then
     # Desktop environment and software installation.
+    clear
     echo "Installing"
     sudo apt update && sudo apt full-upgrade -y
     sudo apt install lxterminal curl -y
@@ -38,18 +38,23 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     touch ~/.config/starship.toml
     sudo systemctl enable lightdm
     # Starting configuration file copying.
+    clear
     echo "Installation complete, copying configuration files"
     sleep 1
     # This overwrites the current .bashrc, xstartup and .config user file. Backup your files.
     cp -f config/bashrc ~/.bashrc
+    mkdir ~/.vnc
     cp -f config/xstartup ~/.vnc/xstartup
     cp -f config/starship/starship.toml ~/.config/starship.toml
     cp -rf config/openbox ~/.config
     cp -rf config/tint2 ~/.config
     cp -rf config/rofi ~/.config
+    clear
     cat config/Rip.txt
-    echo "Copying complete, system will reboot in 5 seconds"
     sleep 5
+    clear
+    echo "Copying complete, system will reboot in 3 seconds"
+    sleep 3
     sudo reboot
 else
     echo "Canceled."
