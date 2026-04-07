@@ -54,6 +54,9 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     cp -rf config/openbox ~/.config
     cp -rf config/tint2 ~/.config
     cp -rf config/rofi ~/.config
+    sudo chown -R $USER:$USER /home/$USER
+    chmod +x ~/.config/openbox/autostart
+    rm -f ~/.Xauthority
     clear
     cat config/Rip.txt
     sleep 5
