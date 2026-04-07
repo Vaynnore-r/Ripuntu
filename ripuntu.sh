@@ -26,10 +26,19 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo add-apt-repository -y universe
     sudo add-apt-repository -y multiverse
     sudo apt update -y
-    sudo apt install nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm gnome-software nautilus gvfs-backends unzip xinit -y
+    sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
+    tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
+    lightdm-gtk-greeter gnome-software nautilus gvfs-backends unzip xinit \
+    build-essential dkms linux-headers-$(uname -r) 
     # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
     sudo dpkg-reconfigure -f noninteractive lightdm
+    sudo sed -i '/pam_kwallet5.so/d' /etc/pam.d/lightdm 2>/dev/null
+    sudo dpkg-reconfigure -f noninteractive lightdm
+    # Perms 
+    sudo groupadd -r nopasswdlogin 2>/dev/null
+    sudo gpasswd -a $USER nopasswdlogin
+    sudo gpasswd -a $USER video
     # Starship installation.
     curl -sS https://starship.rs/install.sh | sh -s -- -y
     mkdir -p ~/.local/share/fonts
@@ -57,6 +66,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo chown -R $USER:$USER /home/$USER
     chmod +x ~/.config/openbox/autostart
     rm -f ~/.Xauthority
+    rm -f ~/.ICEauthority
     clear
     cat config/Rip.txt
     sleep 5
