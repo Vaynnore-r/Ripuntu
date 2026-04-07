@@ -55,7 +55,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sleep 1
     # This overwrites the current .bashrc, xstartup and .config user file. Backup your files.
     cp -f config/bashrc ~/.bashrc
-    sudo cp -f config/openbox.desktop /usr/share/xsessions/
+    sudo cp -f config/openbox/openbox.desktop /usr/share/xsessions/
     sudo chmod 644 /usr/share/xsessions/openbox.desktop
     mkdir -p ~/.vnc
     cp -f config/xstartup ~/.vnc/xstartup
@@ -63,10 +63,12 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     cp -rf config/openbox ~/.config
     cp -rf config/tint2 ~/.config
     cp -rf config/rofi ~/.config
+    # another perms fix
     sudo chown -R $USER:$USER /home/$USER
     chmod +x ~/.config/openbox/autostart
     rm -f ~/.Xauthority
     rm -f ~/.ICEauthority
+    # install done
     clear
     cat config/Rip.txt
     sleep 5
