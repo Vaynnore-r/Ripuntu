@@ -35,9 +35,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo dpkg-reconfigure -f noninteractive lightdm
     sudo sed -i '/pam_kwallet5.so/d' /etc/pam.d/lightdm 2>/dev/null
     sudo dpkg-reconfigure -f noninteractive lightdm
-    # Perms 
-    sudo groupadd -r nopasswdlogin 2>/dev/null
-    sudo gpasswd -a $USER nopasswdlogin
+    # gpu accel
     sudo gpasswd -a $USER video
     # Starship installation.
     curl -sS https://starship.rs/install.sh | sh -s -- -y
