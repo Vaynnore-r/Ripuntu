@@ -1,2 +1,0 @@
-/usr/bin/openbox-session
-path /usr/share/xsessions
