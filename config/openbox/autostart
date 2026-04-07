@@ -1,8 +1,6 @@
-## autostart
-# Recommended in this config but not required.
-sudo systemctl enable- avahi-daemon &
+# autostart
 tint2 &
-#rofi -show run -m -1 &
+rofi -show run -m -1 &
 nitrogen --restore &
 #autocutsel &
 #vncconfig &
