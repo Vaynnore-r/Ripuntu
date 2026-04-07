@@ -46,6 +46,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     mkdir -p ~/.vnc
     cp -f config/xstartup ~/.vnc/xstartup
     cp -f config/starship/starship.toml ~/.config/starship.toml
+    cp -f config/openbox.desktop /usr/share/xsessions
     cp -rf config/openbox ~/.config
     cp -rf config/tint2 ~/.config
     cp -rf config/rofi ~/.config
