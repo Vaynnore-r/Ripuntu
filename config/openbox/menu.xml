@@ -22,14 +22,19 @@
 		<separator/>
 		<menu execute="/usr/bin/obamenu" id="applications-menu" label="Applications"/>
 		<menu id="root-menu-881936" label="Styles">
-			<item label="Right Click">
+			<item label="Obmenu">
 				<action name="Execute">
 					<execute>obmenu</execute>
 				</action>
 			</item>
-			<item label="Gui">
+			<item label="Obconf">
 				<action name="Execute">
 					<execute>obconf</execute>
+				</action>
+			</item>
+			<item label="Lxappearance">
+				<action name="Execute">
+					<execute>lxappearance</execute>
 				</action>
 			</item>
 		</menu>
