@@ -259,9 +259,9 @@
       <action name="Unfocus"/>
     </keybind>
     <!-- Super + Space: opens rofi -->
-    <keybind key="W-space">
+    <keybind key="A-space">
       <action name="Execute">
-        <command>rofi -show run -m -1</command>
+        <command>rofi -show drun -m -1</command>
       </action>
     </keybind>
     <!-- Closes current window -->
