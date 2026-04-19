@@ -124,3 +124,5 @@ echo
 alias ssn='sudo systemctl enable --now ssh'
 ## Starship autostart
 eval "$(starship init bash)"
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/mytheme.omp.json)"
+
