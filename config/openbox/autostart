@@ -1,6 +1,5 @@
 # autostart
 tint2 &
-rofi -show run -m -1 &
 nitrogen --restore &
 #autocutsel &
 #vncconfig &
