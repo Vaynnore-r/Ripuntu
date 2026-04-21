@@ -2,10 +2,9 @@
 
 **CHECK YOUR RELEASE TO PREVENT INSTALLING OUTDATED VERSION**
 
-How to use - Just run thease commands (In Ripuntu folder):
-1. `chmod +x ripuntu.sh`
-2. `./ripuntu.sh`
-3. Enjoy your new lightweight desktop environment.
+How to use - Just run this commands (In Ripuntu folder) and 
+enjoy your new lightweight desktop environment:
+ `./ripuntu.sh`
 
 RELEASES:
 
