@@ -16,23 +16,42 @@ echo "Continue? (y/n)"
 read -n 1 answer
 echo ""
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-    # Desktop environment and software installation.
+    clear
+    echo "Choose desktop environment:"
+    echo "1) Openbox"
+    echo "2) i3"
+    read -n 1 -p "Enter 1 or 2: " de_choice
+    echo ""
     clear
     echo "Installing"
-    sudo apt update && sudo apt full-upgrade -y
-    sudo apt install lxterminal curl -y
-    sudo apt install software-properties-common -y
-    sudo add-apt-repository -y universe
-    sudo add-apt-repository -y multiverse
-    sudo apt update -y
-    sudo apt-get clean
-    sudo apt-get update --fix-missing
-    sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
-    tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
-    gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
-    build-essential dkms linux-headers-$(uname -r)
-    # obmenu install
-    sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
+    if [[ "$de_choice" == "1" ]]; then
+        sudo apt install lxterminal curl -y
+        sudo apt install software-properties-common -y
+        sudo add-apt-repository -y universe
+        sudo add-apt-repository -y multiverse
+        sudo apt update -y
+        sudo apt-get clean
+        sudo apt-get update --fix-missing
+        sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
+        tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
+        gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
+        build-essential dkms linux-headers-$(uname -r)
+        DESKTOP=openbox
+        sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
+    elif [[ "$de_choice" == "2" ]]; then
+        sudo apt install lxterminal curl -y
+        sudo apt install software-properties-common -y
+        sudo add-apt-repository -y universe
+        sudo add-apt-repository -y multiverse
+        sudo apt update -y
+        sudo apt-get clean
+        sudo apt-get update --fix-missing
+        sudo apt install -y nano dpkg dbus-x11 tasksel i3-wm i3blocks i3status htop firefox nitrogen gedit \
+        tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
+        gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
+        build-essential dkms linux-headers-$(uname -r)
+        DESKTOP=i3
+    fi
     # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
     sudo dpkg-reconfigure -f noninteractive lightdm
@@ -68,17 +87,25 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     cp -f config/bashrc ~/.bashrc
     mkdir -p ~/.config/ohmyposh
     cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
-    sudo cp -f config/openbox/openbox.desktop /usr/share/xsessions/
-    sudo chmod 644 /usr/share/xsessions/openbox.desktop
     mkdir -p ~/.vnc
     cp -f config/xstartup ~/.vnc/xstartup
     cp -f config/starship/starship.toml ~/.config/starship.toml
-    cp -rf config/openbox ~/.config
-    cp -rf config/tint2 ~/.config
     cp -rf config/rofi ~/.config
+    if [[ "$DESKTOP" == "openbox" ]]; then
+        sudo cp -f config/openbox/openbox.desktop /usr/share/xsessions/
+        sudo chmod 644 /usr/share/xsessions/openbox.desktop
+        cp -rf config/openbox ~/.config
+        cp -rf config/tint2 ~/.config
+    elif [[ "$DESKTOP" == "i3" ]]; then
+        sudo cp -f config/i3/i3.desktop /usr/share/xsessions/
+        sudo chmod 644 /usr/share/xsessions/i3.desktop
+        cp -rf config/i3 ~/.config
+    fi
     # another perms fix
     sudo chown -R $USER:$USER /home/$USER
-    chmod +x ~/.config/openbox/autostart
+    if [[ "$DESKTOP" == "openbox" ]]; then
+        chmod +x ~/.config/openbox/autostart
+    fi
     rm -f ~/.Xauthority
     rm -f ~/.ICEauthority
     # install done
