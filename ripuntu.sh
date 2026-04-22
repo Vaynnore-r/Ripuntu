@@ -22,6 +22,10 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     echo "2) i3"
     read -n 1 -p "Enter 1 or 2: " de_choice
     echo ""
+    if [[ "$de_choice" != "1" && "$de_choice" != "2" ]]; then
+        echo "Invalid choice. Please enter 1 or 2."
+        exit 1
+    fi
     clear
     echo "Installing"
     if [[ "$de_choice" == "1" ]]; then
