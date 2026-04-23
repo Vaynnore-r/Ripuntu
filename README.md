@@ -2,7 +2,7 @@
 
 **CHECK YOUR RELEASE TO PREVENT INSTALLING OUTDATED VERSION**
 
-How to use - Just run this commands (In Ripuntu folder) and 
+How to use - Just run this command (In Ripuntu folder) and 
 enjoy your new lightweight desktop environment:
  `./ripuntu.sh`
 
@@ -50,5 +50,5 @@ Fixed install script and config files.
 
 1.1 Version requires installed Ubuntu and manual file swapping.
 
-1.0 Version is empty (Uneleased).
+1.0 Version is empty (Unrealesed).
 
