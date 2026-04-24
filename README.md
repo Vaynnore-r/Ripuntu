@@ -8,8 +8,11 @@ enjoy your new lightweight desktop environment:
 
 RELEASES:
 
-1.7.5.5  Version no longer requires installed manual file swapping.
+1.8  Version no longer requires installed manual file swapping.
 Go to changelog. This version is backup before bigger changes on .sh part.
+
+1.7.5.5 Version no longer requires installed manual file swapping.
+Forgot to put changes in readme.
 
 1.7.5  Version no longer requires installed manual file swapping.
 Fixed session not starting and added oh my posh but sadly dont work and wont be fixed any time soon but most of support is starship.
