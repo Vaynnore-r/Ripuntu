@@ -39,7 +39,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
         tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
         gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
-        build-essential dkms linux-headers-$(uname -r)
+        build-essential dkms 
         DESKTOP=openbox
         sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
     elif [[ "$de_choice" == "2" ]]; then
@@ -53,7 +53,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt install -y nano dpkg dbus-x11 tasksel i3-wm i3blocks i3status htop firefox nitrogen gedit \
         tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
         gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
-        build-essential dkms linux-headers-$(uname -r)
+        build-essential dkms 
         DESKTOP=i3
     fi
     # lightdm fix from 0.1.7-1.7
