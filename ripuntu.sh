@@ -21,8 +21,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     echo "3) (comming soon)"
     read -n 1 -p "Enter 1, 2 or 3: " de_choice
     echo ""
-    if [[ "$de_choice" != "1" && "$de_choice" != "2" && "$de_choice" != "3" ]]; then
-        echo "Invalid choice. Please enter 1, 2 or 3."
+    if [[ "$de_choice" != "1" && "$de_choice" != "2" ]]; then
+        echo "Invalid choice. Please enter 1 or 2."
         sleep 1
 	./ripuntu.sh
     fi
@@ -55,9 +55,6 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
         build-essential dkms 
         DESKTOP=i3
-    elif [[ "$de_choice" == "3" ]]; then
-        ./ripuntu.sh
-	DESKTOP=(comming soon)
     fi
      # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
