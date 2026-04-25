@@ -98,7 +98,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     mkdir -p ~/.config/ohmyposh
     cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
     mkdir -p ~/.vnc
-    cp -f config/xstartup ~/.vnc/xstartup
+    cp -f config/vnc/xstartup ~/.vnc/xstartup
     cp -f config/starship/starship.toml ~/.config/starship.toml
     cp -rf config/rofi ~/.config
     if [[ "$DESKTOP" == "openbox" ]]; then
