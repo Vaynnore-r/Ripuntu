@@ -8,7 +8,7 @@ enjoy your new lightweight desktop environment:
 
 RELEASES:
 
-1.7.5  Version no longer requires installed manual file swapping.
+1.7.5.5  Version no longer requires installed manual file swapping.
 Changes in .sh and config files check commits or change log.
 
 1.7.5  Version no longer requires installed manual file swapping.
