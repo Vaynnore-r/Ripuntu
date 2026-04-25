@@ -45,7 +45,7 @@ style = "bold blue"
 symbol = " "
 style = "bold blue"
 
-[node_js]
-symbol = " "
-style = "bold blue"
+#[node_js]
+#symbol = " "
+#style = "bold blue"
 
