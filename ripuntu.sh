@@ -79,8 +79,11 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     chmod +x ~/.local/bin/oh-my-posh
     export PATH="$HOME/.local/bin:$PATH"
     # Installing github cli.
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-    sudo apt-add-repository https://cli.github.com/packages
+    type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+    sudo mkdir -p -m 755 /etc/apt/keyrings
+    curl -fsSL https://github.com | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+    sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://github.com stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
     sudo apt update
     sudo apt install gh -y
     # Starting configuration file copying
