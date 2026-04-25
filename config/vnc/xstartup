@@ -1,15 +1,17 @@
-tint2 &
-rofi -show drun -m -1 &
-nitrogen --restore &
-autocutsel &
-vncconfig &
-vncconfig -nowin &
+#!/bin/sh
 
-#!/bin/bash
-xrdb "$HOME/.Xresources"
-export XDG_SESSION_TYPE=x11
-export DISPLAY=:1
-exec dbus-launch --exit-with-session openbox
+# Ładowanie zasobów i ustawienie tła
+xrdb $HOME/.Xresources
+xsetroot -solid grey
 
+# Wyłączenie problematycznych mapowań (opcjonalne)
+export XKL_XMODMAP_DISABLE=1
 
+# Uruchomienie emulatora terminala (opcjonalnie, odkomentuj jeśli chcesz)
+# x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+
+xsetroot -cursor_name left_ptr
+
+# Kluczowa zmiana: Uruchomienie Openbox
+exec openbox-session
 
