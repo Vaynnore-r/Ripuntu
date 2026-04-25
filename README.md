@@ -9,6 +9,9 @@ enjoy your new lightweight desktop environment:
 RELEASES:
 
 1.8  Version no longer requires installed manual file swapping.
+Fixed .sh and changed config. Next desktop planed in 1.9 version.
+
+1.8  Version no longer requires installed manual file swapping.
 Go to changelog. This version is backup before bigger changes on .sh part.
 
 1.7.5.5 Version no longer requires installed manual file swapping.
