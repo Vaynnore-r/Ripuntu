@@ -5,7 +5,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo
 echo "Install will start soon please be shure that you are on sudo user other than root"
 echo
-sleep 0.5
+sleep 1
 echo
 echo "You will be asked for password and consent to install programs"
 echo
