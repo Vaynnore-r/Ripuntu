@@ -7,5 +7,7 @@ rm -rf ~/.config/starship.toml
 To delete fronts:
 rm -rf ~/.local/share/fonts/JetBrainsMono*
 fc-cache -f -v
+! run openbox if lightdm fails !
+/usr/bin/openbox-session
 
 
