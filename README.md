@@ -9,6 +9,8 @@ How to use - Just run thease commands (In Ripuntu folder):
 
 RELEASES:
 
+1.6-1.7 Version no longer requires installed manual file swapping.THIS IS TEST VERSION READ VERSION DESCRIPTION ON RELEASES PAGE.
+
 1.6 Version no longer requires installed manual file swapping.
 File copying added to ripuntu.sh .
 
