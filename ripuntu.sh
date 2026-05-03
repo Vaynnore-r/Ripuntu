@@ -43,7 +43,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sleep 1
     # This overwrites the current .bashrc, xstartup and .config user file. Backup your files.
     cp -f config/bashrc ~/.bashrc
-    mkdir ~/.vnc
+    mkdir -p ~/.vnc
     cp -f config/xstartup ~/.vnc/xstartup
     cp -f config/starship/starship.toml ~/.config/starship.toml
     cp -rf config/openbox ~/.config
