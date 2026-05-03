@@ -30,7 +30,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo apt-get update --fix-missing
     sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
     tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
-    lightdm-gtk-greeter gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim \
+    gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim \
     build-essential dkms linux-headers-$(uname -r) 
     # obmenu install 
     sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
@@ -55,7 +55,6 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     cp -f config/bashrc ~/.bashrc
     mkdir -p ~/.config/ohmyposh
 cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
-    
     # Starting configuration file copying.
     clear
     echo "Installation complete, copying configuration files"
