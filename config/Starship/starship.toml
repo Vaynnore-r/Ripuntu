@@ -12,7 +12,7 @@ $git_status\
 $character
 """
 
-# Nowa linia po wykonaniu komendy
+# New line after command
 add_newline = true
 
 [os]
@@ -53,7 +53,8 @@ deleted = "✘"
 success_symbol = "[ ➜](bold red)"
 error_symbol = "[ ✗](bold red)"
 
-# Addons
+## Addons
+# Uncoment or add here own items.
 [python]
 symbol = "🐍 "
 style = "bold red"

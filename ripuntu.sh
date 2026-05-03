@@ -40,14 +40,16 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     # Starting configuration file copying.
     echo "Installation complete, copying configuration files"
     sleep 1
-    # This overwrites the current .bashrc and .config user file. Backup your files.
+    # This overwrites the current .bashrc, xstartup and .config user file. Backup your files.
     cp -f config/bashrc ~/.bashrc
+    cp -f config/xstartup ~/.vnc/xstartup
+    cp -f config/starship/starship.toml ~/.config/starship.toml
     cp -rf config/openbox ~/.config
     cp -rf config/tint2 ~/.config
     cp -rf config/rofi ~/.config
-
-    echo "Copying complete, system will reboot in 3 seconds"
-    sleep 3
+    cat config/Rip.txt
+    echo "Copying complete, system will reboot in 5 seconds"
+    sleep 5
     sudo reboot
 else
     echo "Canceled."

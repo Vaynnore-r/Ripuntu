@@ -1,4 +1,3 @@
-Chamge bashcr to .bashcr
 You can add your wallpaper via nitrogen at ~/.config/nitrogen
 Also you can customize starship at ~/.config/starship.toml
 To remove starship: 
