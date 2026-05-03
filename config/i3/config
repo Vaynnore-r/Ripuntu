@@ -1,0 +1,104 @@
+# i3 config file
+set $mod Mod4
+set $term lxterminal
+set $menu rofi -show drun
+
+# Font
+font pango:JetBrainsMono Nerd Font 10
+
+# Colors
+client.focused #268bd2 #268bd2 #ffffff #fb491f
+client.focused_inactive #002b36 #002b36 #93a1a1 #002b36
+client.unfocused #002b36 #002b36 #93a1a1 #002b36
+
+# Key bindings
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exit
+
+# Window gaps
+gaps inner 10
+gaps outer 5
+
+# Smart gaps
+smart_gaps on
+
+# Resize
+bindsym $mod+r resize
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+q kill
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Move focused window
+bindsym $mod+Shift+left move left
+bindsym $mod+Shift+down move down
+bindsym $mod+Shift+up move up
+bindsym $mod+Shift+right move right
+
+# Focus
+bindsym $mod+left focus left
+bindsym $mod+down focus down
+bindsym $mod+up focus up
+bindsym $mod+right focus right
+
+# Split
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+s split toggle
+
+# Layout
+bindsym $mod+e layout toggle all
+bindsym $mod+w layout tabbed
+bindsym $mod+f fullscreen toggle
+bindsym $mod+space floating toggle
+
+# Mark
+bindsym $mod+m mark --add --toggle a
+
+# Focus marked
+bindsym $mod+apostrophe [con_mark="a"] focus
+
+# Move to mark
+bindsym $mod+Shift+apostrophe [con_mark="a"] move container to workspace current
+
+# Workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+
+# Screen shot
+bindsym Print exec scrot -s
+bindsym $mod+Print exec scrot -u
+
+# Autostart
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id i3blocks

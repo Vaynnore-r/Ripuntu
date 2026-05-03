@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=i3
+Comment=Log in using the i3 window manager
+Exec=/usr/bin/i3
+TryExec=/usr/bin/i3
+Icon=i3
+Type=Application
