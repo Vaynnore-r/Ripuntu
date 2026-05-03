@@ -51,6 +51,11 @@
 			</item>
 		</menu>
 		<separator/>
+		<item label="Loguot">
+			<action name="Execute">
+				<execute>openbox --exit</execute>
+			</action>
+		</item>
 		<item label="Reboot">
 			<action name="Execute">
 				<execute>reboot</execute>

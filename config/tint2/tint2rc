@@ -309,7 +309,7 @@ launcher_item_app = tint2conf.desktop
 #-------------------------------------
 # Clock
 time1_format = %H:%M:%S
-time2_format = %d %m %Y
+time2_format = %a %m %Y
 time1_font = sans bold 8
 time1_timezone = 
 time2_timezone = 
