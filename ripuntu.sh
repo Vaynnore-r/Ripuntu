@@ -37,7 +37,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt-get clean
         sudo apt-get update --fix-missing
         sudo apt install -y nano dpkg dbus-x11 openbox tint2 htop nitrogen gedit \
-        rofi ubuntu-wallpapers lightdm \
+        rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common \
         nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
         build-essential dkms 
         sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
@@ -51,18 +51,12 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt-get clean
         sudo apt-get update --fix-missing
         sudo apt install -y nano dpkg dbus-x11 i3-wm i3blocks i3status htop nitrogen gedit \
-        ubuntu-wallpapers lightdm \
+        ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common \
         nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
         build-essential dkms 
         DESKTOP=i3
     fi
-    # slow apps
-    clear
-    echo "Install bigger apps? (y/n)"
-    if [[ "$answer" =~ ^[Yy]$ ]]; then
-	sudo apt install gnome-software firefox tigervnc-standalone-server tigervnc-common -y   
-    fi
-    # lightdm fix from 0.1.7-1.7
+     # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
     sudo dpkg-reconfigure -f noninteractive lightdm
     sudo sed -i '/pam_kwallet5.so/d' /etc/pam.d/lightdm 2>/dev/null
