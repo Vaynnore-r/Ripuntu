@@ -94,7 +94,6 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     mkdir -p ~/.config/ohmyposh
     cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
     mkdir -p ~/.vnc
-    cp -f config/vnc/xstartup ~/.vnc/xstartup
     cp -f config/starship/starship.toml ~/.config/starship.toml
     cp -rf config/rofi ~/.config
     if [[ "$DESKTOP" == "openbox" ]]; then
@@ -102,7 +101,9 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo chmod 644 /usr/share/xsessions/openbox.desktop
         cp -rf config/openbox ~/.config
         cp -rf config/tint2 ~/.config
+        cp -f config/i3/xstartup ~/.vnc/xstartup
     elif [[ "$DESKTOP" == "i3" ]]; then
+    cp -f config/openbox/xstartup ~/.vnc/xstartup
         sudo cp -f config/i3/i3.desktop /usr/share/xsessions/
         sudo chmod 644 /usr/share/xsessions/i3.desktop
         cp -rf config/i3 ~/.config
