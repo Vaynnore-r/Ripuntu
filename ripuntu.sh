@@ -14,8 +14,7 @@ echo
 sleep 1
 echo "Continue? (y/n)"
 read -n 1 answer
-echo "" 
-
+echo ""
 if [[ "$answer" =~ ^[Yy]$ ]]; then
     # Desktop environment and software installation.
     clear
@@ -31,8 +30,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
     tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
     gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
-    build-essential dkms linux-headers-$(uname -r) 
-    # obmenu install 
+    build-essential dkms linux-headers-$(uname -r)
+    # obmenu install
     sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
     # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
@@ -52,15 +51,18 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     touch ~/.config/starship.toml
     sudo systemctl enable lightdm
     # Oh My Posh install
-    cp -f config/bashrc ~/.bashrc
-    mkdir -p ~/.config/ohmyposh
-cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
+    mkdir -p ~/.local/bin
+    curl -sSL https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh-linux-amd64 -o ~/.local/bin/oh-my-posh
+    chmod +x ~/.local/bin/oh-my-posh
+    export PATH="$HOME/.local/bin:$PATH"
     # Starting configuration file copying.
     clear
     echo "Installation complete, copying configuration files"
     sleep 1
     # This overwrites the current .bashrc, xstartup and .config user file. Backup your files.
     cp -f config/bashrc ~/.bashrc
+    mkdir -p ~/.config/ohmyposh
+    cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
     sudo cp -f config/openbox/openbox.desktop /usr/share/xsessions/
     sudo chmod 644 /usr/share/xsessions/openbox.desktop
     mkdir -p ~/.vnc
@@ -85,7 +87,3 @@ cp -f config/ohmyposh/mytheme.omp.json ~/.config/ohmyposh/mytheme.omp.json
 else
     echo "Canceled."
 fi
-
-
-
-
