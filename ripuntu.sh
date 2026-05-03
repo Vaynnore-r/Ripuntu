@@ -37,7 +37,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt-get update --fix-missing
         sudo apt install -y nano dpkg dbus-x11 openbox tint2 htop nitrogen gedit \
         rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
-        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
+        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software \
         build-essential dkms 
         sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
 	DESKTOP=openbox
@@ -50,8 +50,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt-get clean
         sudo apt-get update --fix-missing
         sudo apt install -y nano dpkg dbus-x11 i3-wm i3blocks i3status htop nitrogen gedit \
-        ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
-        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
+        rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
+        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software \
         build-essential dkms 
         DESKTOP=i3
     fi
@@ -77,15 +77,17 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     curl -sSL https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh-linux-amd64 -o ~/.local/bin/oh-my-posh
     chmod +x ~/.local/bin/oh-my-posh
     export PATH="$HOME/.local/bin:$PATH"
-        # Installing github cli (FIXED)
-    type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-    sudo mkdir -p -m 755 /etc/apt/keyrings
-    curl -fsSL https://github.com | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-    sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://github.com stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-    sudo apt update
-    sudo apt install gh -y
-    # Starting configuration file copying
+# Installing github cli (FIXED)
+type -p curl >/dev/null || { sudo apt update && sudo apt install -y curl; }
+sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+  | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
+sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+  | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+sudo apt update
+sudo apt install -y gh
+# Starting configuration file copying
     clear
     echo "Installing programs complete, copying configuration files"
     sleep 1
