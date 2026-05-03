@@ -56,8 +56,6 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     clear
     echo "Copying complete, system will reboot in 3 seconds"
     sleep 3
-    startx /usr/bin/openbox-session
-    sleep 3
     sudo reboot
 else
     echo "Canceled."
