@@ -17,9 +17,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     clear
     echo "Choose desktop environment:"
     echo "1) Openbox"
-    echo "2) i3"
-    echo "3) (comming soon)"
-    read -n 1 -p "Enter 1, 2 or 3: " de_choice
+    echo "2) i3"i
+    read -n 1 -p "Enter 1 or 2: " de_choice
     echo ""
     if [[ "$de_choice" != "1" && "$de_choice" != "2" ]]; then
         echo "Invalid choice. Please enter 1 or 2."
