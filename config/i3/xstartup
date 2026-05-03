@@ -12,6 +12,6 @@ export XKL_XMODMAP_DISABLE=1
 
 xsetroot -cursor_name left_ptr
 
-# Kluczowa zmiana: Uruchomienie Openbox
-exec openbox-session
+# Kluczowa zmiana: Uruchomienie i3
+#exec openbox-session
 
