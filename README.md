@@ -8,6 +8,9 @@ enjoy your new lightweight desktop environment:
 
 RELEASES:
 
+1.9  Version no longer requires installed manual file swapping.
+Fixed critical bugs and improved script clarity.
+
 1.8.5  Version no longer requires installed manual file swapping.
 Fixed .sh and changed config. Next desktop planed in 1.9 version.
 
