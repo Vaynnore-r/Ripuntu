@@ -34,6 +34,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     unzip -oq font.zip -d ~/.local/share/fonts
     rm -f font.zip
     fc-cache -f > /dev/null
+    mkdir -p ~/.config
+    touch ~/.config/starship.toml
     #
     sudo systemctl enable lightdm 
     echo "Installation complete, system will reboot in 3 seconds"
