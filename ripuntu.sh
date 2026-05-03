@@ -55,9 +55,14 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     curl -sSL https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh-linux-amd64 -o ~/.local/bin/oh-my-posh
     chmod +x ~/.local/bin/oh-my-posh
     export PATH="$HOME/.local/bin:$PATH"
-    # Starting configuration file copying.
+    # Installing github cli.
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+    sudo apt-add-repository https://cli.github.com/packages
+    sudo apt update
+    sudo apt install gh -y
+    # Starting configuration file copying
     clear
-    echo "Installation complete, copying configuration files"
+    echo "Installing programs complete, copying configuration files"
     sleep 1
     # This overwrites the current .bashrc, xstartup and .config user file. Backup your files.
     cp -f config/bashrc ~/.bashrc
