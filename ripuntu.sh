@@ -26,10 +26,14 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo add-apt-repository -y universe
     sudo add-apt-repository -y multiverse
     sudo apt update -y
+    sudo apt-get clean
+    sudo apt-get update --fix-missing
     sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
     tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
-    lightdm-gtk-greeter gnome-software nautilus gvfs-backends unzip xinit \
+    lightdm-gtk-greeter gnome-software nautilus gvfs-backends unzip xinit lxappearance  \
     build-essential dkms linux-headers-$(uname -r) 
+    # obmenu install 
+    sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
     # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
     sudo dpkg-reconfigure -f noninteractive lightdm
