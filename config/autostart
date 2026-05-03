@@ -1,7 +1,6 @@
 ## autostart
 sudo systemctl enable- avahi-daemon &
 tint2 &
-compton &
 #rofi -show run -m -1 &
 nitrogen --restore &
 #autocutsel &
