@@ -35,11 +35,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt update -y
         sudo apt-get clean
         sudo apt-get update --fix-missing
-        sudo apt install -y nano dpkg dbus-x11 openbox tint2 htop nitrogen gedit \
-        rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
-        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software nemo\
-        build-essential dkms 
-        sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
+        sudo apt install -y openbox tint2        
+	sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
 	DESKTOP=openbox
     elif [[ "$de_choice" == "2" ]]; then
         sudo apt install lxterminal curl -y
@@ -49,13 +46,15 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt update -y
         sudo apt-get clean
         sudo apt-get update --fix-missing
-        sudo apt install -y nano dpkg dbus-x11 i3-wm i3blocks i3status htop nitrogen gedit \
-        rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
-        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software nemo \
-        build-essential dkms 
+        sudo apt install -y i3-wm i3blocks i3status
         DESKTOP=i3
     fi
-     # lightdm fix from 0.1.7-1.7
+    # normal software
+    sudo apt install -y nano dpkg dbus-x11 htop nitrogen gedit \
+    rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
+    nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software nemo\
+    build-essential dkms
+    # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
     sudo dpkg-reconfigure -f noninteractive lightdm
     sudo sed -i '/pam_kwallet5.so/d' /etc/pam.d/lightdm 2>/dev/null
@@ -103,7 +102,7 @@ sudo apt install -y gh
         sudo chmod 644 /usr/share/xsessions/openbox.desktop
         cp -rf config/openbox ~/.config
         cp -rf config/tint2 ~/.config
-        cp -f config/i3/xstartup ~/.vnc/xstartup
+        cp -f config/openbox/xstartup ~/.vnc/xstartup
     elif [[ "$DESKTOP" == "i3" ]]; then
     cp -f config/openbox/xstartup ~/.vnc/xstartup
         sudo cp -f config/i3/i3.desktop /usr/share/xsessions/
