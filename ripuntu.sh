@@ -37,7 +37,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt-get update --fix-missing
         sudo apt install -y nano dpkg dbus-x11 openbox tint2 htop nitrogen gedit \
         rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
-        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software \
+        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software nemo\
         build-essential dkms 
         sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
 	DESKTOP=openbox
@@ -51,7 +51,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt-get update --fix-missing
         sudo apt install -y nano dpkg dbus-x11 i3-wm i3blocks i3status htop nitrogen gedit \
         rofi ubuntu-wallpapers lightdm firefox tigervnc-standalone-server tigervnc-common snap \
-        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software \
+        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter gnome-software nemo \
         build-essential dkms 
         DESKTOP=i3
     fi

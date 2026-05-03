@@ -125,10 +125,11 @@ alias essh='sudo systemctl enable --now ssh'
 alias ains='sudo apt install -y'
 alias arm='sudo apt purge -y'
 alias aupd='sudo apt update && sudo apt upgrade -y'
+alias aclr='sudo apt autoremove -y'
 alias sins='sudo snap install '
 alias srm='sudo snap remove'
-alias aclr='sudo apt autoremove -y'
 alias m='micro'
+alias filem='nemo'
 ## Starship autostart
 eval "$(starship init bash)"
 eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/mytheme.omp.json)"
