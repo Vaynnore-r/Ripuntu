@@ -77,12 +77,12 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     curl -sSL https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh-linux-amd64 -o ~/.local/bin/oh-my-posh
     chmod +x ~/.local/bin/oh-my-posh
     export PATH="$HOME/.local/bin:$PATH"
-    # Installing github cli.
+        # Installing github cli (FIXED)
     type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
     sudo mkdir -p -m 755 /etc/apt/keyrings
-    curl -fsSL https://github.com | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
-    sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://github.com stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+    curl -fsSL https://github.com | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+    sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://github.com stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
     sudo apt update
     sudo apt install gh -y
     # Starting configuration file copying
