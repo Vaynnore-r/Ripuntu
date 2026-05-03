@@ -9,6 +9,10 @@ How to use - Just run thease commands (In Ripuntu folder):
 
 RELEASES:
 
+1.7.5  Version no longer requires installed manual file swapping.
+Fixed session not starting and added oh my posh but sadly dont work and wont be fixed any time soon but most of support is starship.
+Just a reminder dont use older versions.
+
 1.7 Version no longer requires installed manual file swapping.
 This version is most stable and nearly all bugs are fixed.
 Don’t use versions older than this one. Others contain incorrect packages that can be fixed manually, but it’s not recommended due to issues with Openbox and LightDM.
