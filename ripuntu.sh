@@ -26,7 +26,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo add-apt-repository -y universe
     sudo add-apt-repository -y multiverse
     sudo apt update -y
-    sudo apt install nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm gnome-software nautilus gvfs-backends unzip -y
+    sudo apt install nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm gnome-software nautilus gvfs-backends unzip xinit -y
     # Starship installation.
     curl -sS https://starship.rs/install.sh | sh -s -- -y
     mkdir -p ~/.local/share/fonts
@@ -55,6 +55,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sleep 5
     clear
     echo "Copying complete, system will reboot in 3 seconds"
+    sleep 3
+    startx /usr/bin/openbox-session
     sleep 3
     sudo reboot
 else

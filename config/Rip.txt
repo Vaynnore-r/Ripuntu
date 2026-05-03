@@ -8,6 +8,6 @@ To delete fronts:
 rm -rf ~/.local/share/fonts/JetBrainsMono*
 fc-cache -f -v
 ! run openbox if lightdm fails !
-/usr/bin/openbox-session
+startx /usr/bin/openbox-session
 
 
