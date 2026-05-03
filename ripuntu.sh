@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export DEBIAN_FRONTEND=noninteractive
 ## This is ripuntu installer.
 ## Do chmod +x ripuntu.sh and run ./ripuntu.sh without sudo to prevent install issues.
 echo
@@ -22,7 +22,11 @@ if [ "$answer" = "y" ]; then
     sudo add-apt-repository -y universe
     sudo add-apt-repository -y multiverse
     sudo apt update -y
-    sudo apt install nano dpkg dbus-x11 tasksel openbox tint2 htop firefox obmenu nitrogen gedit tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm obmenu gnome-software nautilus gvfs gvfs-afp gvfs-smb -y
+    sudo apt install nano dpkg dbus-x11 tasksel openbox tint2 htop firefox obmenu nitrogen gedit tigervnc-standalone-server tigervnc-        common rofi ubuntu-wallpapers lightdm gnome-software nautilus gvfs gvfs-afp gvfs-smb -y
+    sudo systemctl enable lightdm    
+    echo "Installation compleate, system will reboot in 3 seconds"
+    sleep 3
+    sudo reboot
 else
     echo "Canceled."
 fi
