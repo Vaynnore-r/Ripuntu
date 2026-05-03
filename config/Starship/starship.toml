@@ -16,7 +16,7 @@ $character
 add_newline = true
 
 [os]
-disabled = false
+disabled = true
 style = "bg:red fg:white"
 
 [username]
@@ -62,6 +62,6 @@ style = "bold red"
 symbol = "🦀 "
 style = "bold red"
 
-[node_js]
-symbol = " "
-style = "bold red"
+#[node_js]
+#symbol = "? "
+#style = "bold red"
