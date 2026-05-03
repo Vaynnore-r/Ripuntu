@@ -1,9 +1,12 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 ## This is ripuntu installer.
-## Do chmod +x ripuntu.sh and run ./ripuntu.sh with sudo to prevent install issues.
+## Do chmod +x ripuntu.sh and run ./ripuntu.sh without sudo to prevent install issues.
 echo
-echo "Install will start soon please be shure that you are on sudo user other than root"
+echo "WARNING: This script will overwrite your current desktop environment in future releases. Please backup your data before proceeding."
+echo
+sleep 3
+echo "Install will start soon please be sure that you are on sudo user other than root"
 echo
 sleep 1
 echo
@@ -14,7 +17,7 @@ echo "Continue? (y/n)"
 read -n 1 answer
 echo "" 
 
-if [ "$answer" = "y" ]; then
+if [[ "$answer" =~ ^[Yy]$ ]]; then
     echo "Installing"
     sudo apt update && sudo apt full-upgrade -y
     sudo apt install lxterminal curl -y
@@ -22,11 +25,18 @@ if [ "$answer" = "y" ]; then
     sudo add-apt-repository -y universe
     sudo add-apt-repository -y multiverse
     sudo apt update -y
-    sudo apt install nano dpkg dbus-x11 tasksel openbox openbox-menu tint2 htop firefox obmenu nitrogen gedit tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm gnome-software nautilus gvfs gvfs-afp gvfs-smb -y
-    # Install starship part will be fixed later.
-    curl -sS https://starship.rs/install.sh | sh
+    sudo apt install nano dpkg dbus-x11 tasksel openbox openbox-menu tint2 htop firefox obmenu nitrogen gedit tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm gnome-software nautilus gvfs gvfs-afp gvfs-smb unzip -y
+    # Install starship part will be fixed later. Edit bugs should be fixed.
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
+    # Starship fronts , watch out for bugs. Edit bugs should be fixed.
+    mkdir -p ~/.local/share/fonts
+    curl -Lso font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+    unzip -oq font.zip -d ~/.local/share/fonts
+    rm -f font.zip
+    fc-cache -f > /dev/null
+    #
     sudo systemctl enable lightdm 
-    echo "Installation compleate, system will reboot in 3 seconds"
+    echo "Installation complete, system will reboot in 3 seconds"
     sleep 3
     sudo reboot
 else
