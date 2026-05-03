@@ -1,3 +1,4 @@
+THIS IS Rip.txt FILE IN Ripuntu FOLD
 You can add your wallpaper via nitrogen at ~/.config/nitrogen
 Also you can customize starship at ~/.config/starship.toml
 To remove starship: 
@@ -10,7 +11,7 @@ fc-cache -f -v
 ! run openbox if lightdm fails !
 startx /usr/bin/openbox-session
 
-# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-# sudo apt-add-repository https://cli.github.com/packages
-# sudo apt update
-# sudo apt install gh
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh

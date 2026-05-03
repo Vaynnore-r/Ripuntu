@@ -121,15 +121,18 @@ echo
 echo "Ripuntu Fast and Reliable"
 echo
 ## Add aliases below.
-alias ssn='sudo systemctl enable --now ssh'
-alias insa='sudo apt install -y'
-alias rma='sudo apt purge -y'
-alias upda='sudo apt update && sudo apt upgrade -y'
-alias inss='sudo snap install '
-alias rms='sudo snap remove'
-alias clra='sudo apt autoremove -y'
+alias essh='sudo systemctl enable --now ssh'
+alias ains='sudo apt install -y'
+alias arm='sudo apt purge -y'
+alias aupd='sudo apt update && sudo apt upgrade -y'
+alias sins='sudo snap install '
+alias srm='sudo snap remove'
+alias aclr='sudo apt autoremove -y'
 alias m='micro'
 ## Starship autostart
 eval "$(starship init bash)"
 eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/mytheme.omp.json)"
 
+
+# opencode
+export PATH=/home/vaynnore/.opencode/bin:$PATH
