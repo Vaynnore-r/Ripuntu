@@ -1,68 +1,51 @@
-## Starship config red theme. WARNING: May not work.
+# Starship config - Blue Powerline Theme
 format = """
-[](fg:red)\
-$os\
+[](blue)\
 $username\
-[](bg:red fg:red)\
+[](fg:blue bg:blue)\
 $directory\
-[](fg:red bg:red)\
+[](fg:blue bg:blue)\
 $git_branch\
 $git_status\
-[](fg:red)\
+[](fg:blue)\
 $character
 """
 
-# New line after command
 add_newline = true
-
-[os]
-disabled = true
-style = "bg:red fg:white"
 
 [username]
 show_always = true
-style_user = "bg:red fg:white"
+style_user = "bg:blue fg:white"
 format = "[$user]($style)"
 
 [directory]
-style = "bg:red fg:white"
+style = "bg:blue fg:white"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = " "
-style = "bg:red fg:white"
-format = "[[ $symbol$branch ]($style)]($style)"
+style = "bg:blue fg:white"
+format = "[ $symbol$branch ]($style)"
 
 [git_status]
-style = "bg:red fg:white"
-format = '[[($all_status$ahead_behind )]($style)]($style)'
-conflicted = "="
-ahead = "⇡"
-behind = "⇣"
-diverged = "⇕"
-untracked = "?"
-stashed = "$"
-modified = "!"
-staged = "+"
-renamed = "»"
-deleted = "✘"
+style = "bg:blue fg:white"
+format = '[$all_status$ahead_behind]($style)'
 
 [character]
-success_symbol = "[ ➜](bold red)"
-error_symbol = "[ ✗](bold red)"
+success_symbol = "[ ➜](bold blue)"
+error_symbol = "[ ✗](bold blue)"
 
-## Addons
-# Uncoment or add here own items.
 [python]
-symbol = "🐍 "
-style = "bold red"
+symbol = " "
+style = "bold blue"
 
 [rust]
-symbol = "🦀 "
-style = "bold red"
+symbol = " "
+style = "bold blue"
 
-#[node_js]
-#symbol = "? "
-#style = "bold red"
+[node_js]
+symbol = " "
+style = "bold blue"
+
