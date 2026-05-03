@@ -55,6 +55,9 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
         build-essential dkms 
         DESKTOP=i3
+    elif [[ "$de_choice" == "3" ]]; then
+        ./ripuntu.sh
+	DESKTOP=(comming soon)
     fi
      # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
