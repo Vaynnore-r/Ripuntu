@@ -6,12 +6,10 @@ clear
 echo
 echo "WARNING: This script will overwrite your current desktop environment. Please backup your data before proceeding."
 echo
-sleep 3
 echo "Install will start soon please be sure that you are on sudo user other than root"
 echo
 echo "You will be asked for password and consent to install programs"
 echo
-sleep 1
 echo "Continue? (y/n)"
 read -n 1 answer
 echo ""
@@ -20,11 +18,13 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     echo "Choose desktop environment:"
     echo "1) Openbox"
     echo "2) i3"
-    read -n 1 -p "Enter 1 or 2: " de_choice
+    echo "3) (comming soon)"
+    read -n 1 -p "Enter 1, 2 or 3: " de_choice
     echo ""
-    if [[ "$de_choice" != "1" && "$de_choice" != "2" ]]; then
-        echo "Invalid choice. Please enter 1 or 2."
-        exit 1
+    if [[ "$de_choice" != "1" && "$de_choice" != "2" && "$de_choice" != "3" ]]; then
+        echo "Invalid choice. Please enter 1, 2 or 3."
+        sleep 1
+	./ripuntu.sh
     fi
     clear
     echo "Installing"
@@ -36,12 +36,12 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt update -y
         sudo apt-get clean
         sudo apt-get update --fix-missing
-        sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
-        tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
-        gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
+        sudo apt install -y nano dpkg dbus-x11 openbox tint2 htop nitrogen gedit \
+        rofi ubuntu-wallpapers lightdm \
+        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
         build-essential dkms 
-        DESKTOP=openbox
         sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
+	DESKTOP=openbox
     elif [[ "$de_choice" == "2" ]]; then
         sudo apt install lxterminal curl -y
         sudo apt install software-properties-common -y
@@ -50,11 +50,17 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         sudo apt update -y
         sudo apt-get clean
         sudo apt-get update --fix-missing
-        sudo apt install -y nano dpkg dbus-x11 tasksel i3-wm i3blocks i3status htop firefox nitrogen gedit \
-        tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
-        gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
+        sudo apt install -y nano dpkg dbus-x11 i3-wm i3blocks i3status htop nitrogen gedit \
+        ubuntu-wallpapers lightdm \
+        nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
         build-essential dkms 
         DESKTOP=i3
+    fi
+    # slow apps
+    clear
+    echo "Install bigger apps? (y/n)"
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+	sudo apt install gnome-software firefox tigervnc-standalone-server tigervnc-common -y   
     fi
     # lightdm fix from 0.1.7-1.7
     echo "/usr/sbin/lightdm" | sudo tee /etc/X11/default-display-manager
