@@ -30,7 +30,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo apt-get update --fix-missing
     sudo apt install -y nano dpkg dbus-x11 tasksel openbox tint2 htop firefox nitrogen gedit \
     tigervnc-standalone-server tigervnc-common rofi ubuntu-wallpapers lightdm \
-    gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg \
+    gnome-software nautilus gvfs-backends unzip xinit lxappearance neovim xorg xserver-xorg lightdm-gtk-greeter \
     build-essential dkms linux-headers-$(uname -r) 
     # obmenu install 
     sudo apt install -y obmenu || { echo "obmenu installation failed, skipping"; sleep 2; }
