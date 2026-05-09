@@ -97,6 +97,7 @@ sudo apt install -y gh
     mkdir -p ~/.vnc
     cp -f config/starship/starship.toml ~/.config/starship.toml
     cp -rf config/rofi ~/.config
+    cp -f config/rip ~/.rip
     if [[ "$DESKTOP" == "openbox" ]]; then
         sudo cp -f config/openbox/openbox.desktop /usr/share/xsessions/
         sudo chmod 644 /usr/share/xsessions/openbox.desktop
