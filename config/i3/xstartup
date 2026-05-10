@@ -7,11 +7,9 @@ xsetroot -solid grey
 # Wyłączenie problematycznych mapowań (opcjonalne)
 export XKL_XMODMAP_DISABLE=1
 
-# Uruchomienie emulatora terminala (opcjonalnie, odkomentuj jeśli chcesz)
-# x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
-
+# Ustawienie kursora
 xsetroot -cursor_name left_ptr
 
 # Kluczowa zmiana: Uruchomienie i3
-#exec openbox-session
+exec i3
 
