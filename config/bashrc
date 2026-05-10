@@ -131,6 +131,7 @@ alias srm='sudo snap remove'
 alias m='micro'
 alias filem='nemo'
 alias apps='~/.rip/apps.sh'
+alias ripconf='python3 ~/.rip/rip.py'
 ## Starship autostart
 eval "$(starship init bash)"
 eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/mytheme.omp.json)"
