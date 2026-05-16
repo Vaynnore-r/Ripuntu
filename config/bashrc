@@ -117,7 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 ## TTY welcome message
-echo
 echo "Ripuntu Fast and Reliable"
 echo
 ## Add aliases below.
